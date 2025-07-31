@@ -9,10 +9,10 @@
 <body>
     <!-- Elemento de áudio - adicione aqui -->
     <audio id="backgroundMusic" loop>
-        <source src="musica-romantica.mp3" type="audio/mpeg">
-        <source src="musica-romantica.ogg" type="audio/ogg">
-        Seu navegador não suporta áudio.
-    </audio>
+    <source src="./audio/nossa-musica.mp3" type="audio/mpeg">
+    <source src="nossa-musica.ogg" type="audio/ogg">
+    Seu navegador não suporta áudio.
+</audio>
 
     <div class="page active" id="home">
         <div class="background-effects">
@@ -48,7 +48,7 @@
                     <p>> Eu sei que não sou muito bom com palavras...</p>
                     <p>> Então resolvi falar do meu jeito - através do código!</p>
                     <p>> Este site é minha forma de dizer o quanto você significa para mim.</p>
-                    <p class="highlight">> Será que você me dá uma segunda chance? 🥺</p>
+                    <p class="highlight">> Será que você me dá sua mão novamente? 🥺</p>
                 </div>
             </div>
 
@@ -79,8 +79,8 @@
             </nav>
 
             <footer class="credits">
-                <p>Feito com 💖 e muito café por alguém que te ama</p>
-                <p>Use as setas do teclado para navegar como um verdadeiro gamer! ⬅️➡️</p>
+                <p>Feito com 💖 e por alguém que te ama</p>
+               
             </footer>
         </div>
     </div>
@@ -146,25 +146,8 @@
             </div>
 
             <div class="memory-viewer" id="memoryViewer">
-    <div class="polaroid">
-        <div class="photo">
-            <!-- COLOQUE SUA FOTO AQUI -->
-            <img src="fotos/foto1.jpg" alt="Nosso Primeiro Encontro" class="memory-photo">
-            <!-- Se não tiver foto ainda, remova a tag <img> e deixe só o emoji -->
-            <div class="emoji-fallback">💕</div>
-        </div>
-        <div class="photo-caption">Nosso Primeiro Encontro</div>
-    </div>
-    
-    <div class="memory-info">
-        <div class="memory-date">📅 O dia que mudou tudo</div>
-        <div class="memory-location">📍 Naquele lugar especial</div>
-        <p class="memory-description">Lembro como se fosse ontem... seus olhos brilhando, seu sorriso tímido. Foi quando soube que você era especial.</p>
-    </div>
-
-    <button class="nav-arrow left" onclick="previousMemory()">←</button>
-    <button class="nav-arrow right" onclick="nextMemory()">→</button>
-</div>
+                <!-- O conteúdo será gerado dinamicamente pelo JavaScript -->
+            </div>
 
             <div class="memory-thumbnails" id="memoryThumbnails"></div>
 
@@ -293,7 +276,7 @@
                 <div class="question-target">🎯</div>
                 <h3>ÚLTIMA PERGUNTA</h3>
                 <p class="question-text">Depois de tudo que passamos juntos, de todas as memórias que criamos, de todo o amor que ainda sinto por você...</p>
-                <p class="main-question">VOCÊ ME DÁ UMA SEGUNDA CHANCE?</p>
+                <p class="main-question">VOCÊ ME DÁ UMA ÚLTIMA DANÇA?</p>
                 
                 <div class="answer-buttons">
                     <button class="yes-button" onclick="handleYes()">
@@ -319,66 +302,31 @@
         </div>
     </div>
 
+    <!-- Carregar apenas o script.js -->
     <script src="script.js"></script>
-
-<script>
-const memories = [
-  {
-    title: "Nosso Primeiro Encontro",
-    date: "O dia que mudou tudo",
-    location: "Naquele lugar especial",
-    description: "Lembro como se fosse ontem... seus olhos brilhando, seu sorriso tímido. Foi quando soube que você era especial.",
-    emoji: "💕",
-    photo: "audio/primeiroEnc.jpg", // ADICIONE O CAMINHO DA SUA FOTO AQUI
-    color: "from-pink-400 to-red-400",
-  },
-  {
-    title: "Nossa Primeira Viagem",
-    date: "Aventura inesquecível", 
-    location: "Longe de casa, perto do coração",
-    description: "Descobrimos juntos lugares novos, criamos memórias únicas. Cada foto, cada risada, cada momento foi mágico.",
-    emoji: "✈️",
-    photo: "fotos/foto2.jpg", // ADICIONE O CAMINHO DA SUA FOTO AQUI
-    color: "from-blue-400 to-purple-400",
-  },
-  {
-    title: "Aquela Noite Especial",
-    date: "Sob as estrelas",
-    location: "Só nós dois no mundo", 
-    description: "Conversamos até o amanhecer, dividimos sonhos e medos. Foi quando percebi que queria você para sempre.",
-    emoji: "🌟",
-    photo: "fotos/foto3.jpg", // ADICIONE O CAMINHO DA SUA FOTO AQUI
-    color: "from-purple-400 to-indigo-400",
-  },
-  {
-    title: "Nossos Momentos Bobos",
-    date: "Risadas infinitas",
-    location: "Em qualquer lugar",
-    description: "Dançando na cozinha, cantando no carro, fazendo piadas internas. Você torna tudo mais divertido.",
-    emoji: "😂", 
-    photo: "fotos/foto4.jpg", // ADICIONE O CAMINHO DA SUA FOTO AQUI
-    color: "from-yellow-400 to-orange-400",
-  },
-  {
-    title: "Quando Você Me Cuidou",
-    date: "Nos momentos difíceis",
-    location: "Ao meu lado sempre",
-    description: "Você esteve lá quando eu mais precisei. Seu carinho, sua paciência, seu amor me curaram.",
-    emoji: "🤗",
-    photo: "fotos/foto5.jpg", // ADICIONE O CAMINHO DA SUA FOTO AQUI
-    color: "from-green-400 to-teal-400",
-  },
-  {
-    title: "Nossos Planos e Sonhos", 
-    date: "Olhando para o futuro",
-    location: "Em nossos corações",
-    description: "Falávamos sobre nossa casa, nossos pets, nossas aventuras futuras. Ainda quero realizar tudo isso com você.",
-    emoji: "🏠",
-    photo: "fotos/foto6.jpg", // ADICIONE O CAMINHO DA SUA FOTO AQUI
-    color: "from-teal-400 to-cyan-400",
-  },
-]
-
-</script>
+    
+    <!-- Script para música -->
+    <script>
+        // Função para música com tratamento de erro
+        function toggleMusicWithAudio() {
+            const audio = document.getElementById('backgroundMusic')
+            
+            if (gameState.isPlaying) {
+                audio.play().catch(e => {
+                    console.log('Música não encontrada, mas o site funciona normalmente:', e)
+                    // Continue com as animações mesmo sem música
+                })
+            } else {
+                audio.pause()
+            }
+        }
+        
+        // Sobrescrever a função toggleMusic original
+        const originalToggleMusic = toggleMusic
+        toggleMusic = function() {
+            originalToggleMusic()
+            toggleMusicWithAudio()
+        }
+    </script>
 </body>
 </html>

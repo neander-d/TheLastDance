@@ -7,6 +7,68 @@ const gameState = {
   currentVerse: 0,
 }
 
+// Mover o array de memories para o topo do arquivo, logo após o gameState
+const memories = [
+  {
+    title: "Nosso Primeiro Encontro",
+    date: "O dia que mudou tudo",
+    location: "Naquele lugar especial",
+    description:
+      "Lembro como se fosse ontem... seus olhos brilhando, seu sorriso tímido. Foi quando soube que você era especial.",
+    emoji: "💕",
+    photo: "fotos/foto1.jpg", // ADICIONE O CAMINHO DA SUA FOTO AQUI
+    color: "from-pink-400 to-red-400",
+  },
+  {
+    title: "Aquele dia especial",
+    date: "Um dos melhores momentos",
+    location: "Rumo ao lar",
+    description:
+      "Sempre será o melhor 03/09",
+    emoji: "❤️‍🔥",
+    photo: "fotos/foto2.jpg", // ADICIONE O CAMINHO DA SUA FOTO AQUI
+    color: "from-blue-400 to-purple-400",
+  },
+  {
+    title: "Aquela Noite Especial",
+    date: "nossa primeira noite",
+    location: "Só nós dois no mundo",
+    description:
+      "CUma noite mágica, onde nossos corações se entrelaçaram em momentos de pura conexão",
+    emoji: "🌟",
+    photo: "fotos/foto3.jpg", // ADICIONE O CAMINHO DA SUA FOTO AQUI
+    color: "from-purple-400 to-indigo-400",
+  },
+  {
+    title: "Nossos Momentos Bobos",
+    date: "Risadas infinitas",
+    location: "Em qualquer lugar",
+    description: "Com você, posso ser eu mesmo. Você torna tudo mais divertido.",
+    emoji: "😂",
+    photo: "fotos/foto4.jpg", // ADICIONE O CAMINHO DA SUA FOTO AQUI
+    color: "from-yellow-400 to-orange-400",
+  },
+  {
+    title: "Um momento mágimo",
+    date: "Nos momentos difíceis",
+    location: "sob as estrelas",
+    description: "Nosso momento de reconexão, sinceridade e um bom papo",
+    emoji: "🤗",
+    photo: "fotos/foto5.jpg", // ADICIONE O CAMINHO DA SUA FOTO AQUI
+    color: "from-green-400 to-teal-400",
+  },
+  {
+    title: "Nossos Planos e Sonhos",
+    date: "Olhando para o futuro",
+    location: "Em nossos corações",
+    description:
+      "Um momento que marcou nossas vidas, sempre te falei sobre meus planos e futuro, agora são nossos, e apartir desse momento tudo se tornou mais possível. Ainda quero realizar tudo isso com você.",
+    emoji: "🏠",
+    photo: "fotos/foto6.jpg", // ADICIONE O CAMINHO DA SUA FOTO AQUI
+    color: "from-teal-400 to-cyan-400",
+  },
+]
+
 // Dados dos motivos
 const reasons = [
   {
@@ -39,62 +101,6 @@ const reasons = [
     icon: "🔥",
     title: "Nossa conexão é especial",
     description: "O que temos é raro e precioso. Não é todo dia que duas almas se conectam assim.",
-  },
-]
-
-// Dados das memórias
-const memories = [
-  {
-    title: "Nosso Primeiro Encontro",
-    date: "O dia que mudou tudo",
-    location: "Naquele lugar especial",
-    description:
-      "Lembro como se fosse ontem... seus olhos brilhando, seu sorriso tímido. Foi quando soube que você era especial.",
-    emoji: "💕",
-    color: "from-pink-400 to-red-400",
-  },
-  {
-    title: "Nossa Primeira Viagem",
-    date: "Aventura inesquecível",
-    location: "Longe de casa, perto do coração",
-    description:
-      "Descobrimos juntos lugares novos, criamos memórias únicas. Cada foto, cada risada, cada momento foi mágico.",
-    emoji: "✈️",
-    color: "from-blue-400 to-purple-400",
-  },
-  {
-    title: "Aquela Noite Especial",
-    date: "Sob as estrelas",
-    location: "Só nós dois no mundo",
-    description:
-      "Conversamos até o amanhecer, dividimos sonhos e medos. Foi quando percebi que queria você para sempre.",
-    emoji: "🌟",
-    color: "from-purple-400 to-indigo-400",
-  },
-  {
-    title: "Nossos Momentos Bobos",
-    date: "Risadas infinitas",
-    location: "Em qualquer lugar",
-    description: "Dançando na cozinha, cantando no carro, fazendo piadas internas. Você torna tudo mais divertido.",
-    emoji: "😂",
-    color: "from-yellow-400 to-orange-400",
-  },
-  {
-    title: "Quando Você Me Cuidou",
-    date: "Nos momentos difíceis",
-    location: "Ao meu lado sempre",
-    description: "Você esteve lá quando eu mais precisei. Seu carinho, sua paciência, seu amor me curaram.",
-    emoji: "🤗",
-    color: "from-green-400 to-teal-400",
-  },
-  {
-    title: "Nossos Planos e Sonhos",
-    date: "Olhando para o futuro",
-    location: "Em nossos corações",
-    description:
-      "Falávamos sobre nossa casa, nossos pets, nossas aventuras futuras. Ainda quero realizar tudo isso com você.",
-    emoji: "🏠",
-    color: "from-teal-400 to-cyan-400",
   },
 ]
 
@@ -250,7 +256,7 @@ function startReasonRotation() {
 function initializeLembrancas() {
   createStarsBackground()
   createMemoryThumbnails()
-  updateMemoryViewer()
+  updateMemoryViewer() // Adicionar esta linha
 }
 
 // Criar fundo de estrelas
@@ -298,8 +304,7 @@ function setCurrentMemory(index) {
   updateMemoryThumbnails()
 }
 
-
-// Atualizar visualizador de memórias
+// Atualizar o visualizador de memórias
 function updateMemoryViewer() {
   const viewer = document.getElementById("memoryViewer")
   if (!viewer) return
@@ -308,7 +313,8 @@ function updateMemoryViewer() {
   viewer.innerHTML = `
         <div class="polaroid">
             <div class="photo">
-                <img src="${memory.photo}" alt="${memory.title}" class="memory-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                <img src="${memory.photo}" alt="${memory.title}" class="memory-photo" 
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                 <div class="emoji-fallback" style="display: none;">${memory.emoji}</div>
             </div>
             <div class="photo-caption">${memory.title}</div>
@@ -353,40 +359,37 @@ function initializeLastDance() {
 }
 
 // Alternar música
- function toggleMusic() {
-            const audio = document.getElementById('backgroundMusic')
-            gameState.isPlaying = !gameState.isPlaying
+function toggleMusic() {
+  gameState.isPlaying = !gameState.isPlaying
 
-            const playIcon = document.getElementById("playIcon")
-            const playerStatus = document.getElementById("playerStatus")
-            const discoBall = document.querySelector(".disco-ball")
-            const spotlights = document.querySelectorAll(".spotlight")
-            const danceFloor = document.getElementById("danceFloor")
+  const playIcon = document.getElementById("playIcon")
+  const playerStatus = document.getElementById("playerStatus")
+  const discoBall = document.querySelector(".disco-ball")
+  const spotlights = document.querySelectorAll(".spotlight")
+  const danceFloor = document.getElementById("danceFloor")
 
-            if (gameState.isPlaying) {
-                audio.play().catch(e => console.log('Erro ao tocar música:', e))
-                playIcon.textContent = "⏸️"
-                playerStatus.textContent = "Tocando nossa canção..."
-                discoBall.classList.add("spinning")
-                spotlights.forEach((spotlight) => spotlight.classList.add("active"))
-                danceFloor.classList.add("dancing")
+  if (gameState.isPlaying) {
+    playIcon.textContent = "⏸️"
+    playerStatus.textContent = "Tocando nossa canção..."
+    discoBall.classList.add("spinning")
+    spotlights.forEach((spotlight) => spotlight.classList.add("active"))
+    danceFloor.classList.add("dancing")
 
-                startLyricsRotation()
-                createDancingParticles()
-                activateFloorLights()
-            } else {
-                audio.pause()
-                playIcon.textContent = "▶️"
-                playerStatus.textContent = "Clique para tocar"
-                discoBall.classList.remove("spinning")
-                spotlights.forEach((spotlight) => spotlight.classList.remove("active"))
-                danceFloor.classList.remove("dancing")
+    startLyricsRotation()
+    createDancingParticles()
+    activateFloorLights()
+  } else {
+    playIcon.textContent = "▶️"
+    playerStatus.textContent = "Clique para tocar"
+    discoBall.classList.remove("spinning")
+    spotlights.forEach((spotlight) => spotlight.classList.remove("active"))
+    danceFloor.classList.remove("dancing")
 
-                stopLyricsRotation()
-                clearDancingParticles()
-                deactivateFloorLights()
-            }
-        }
+    stopLyricsRotation()
+    clearDancingParticles()
+    deactivateFloorLights()
+  }
+}
 
 // Iniciar rotação das letras
 function startLyricsRotation() {
