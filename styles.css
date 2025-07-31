@@ -1,4 +1,3 @@
-/* Reset e Base */
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +8,8 @@ body {
   font-family: "Courier New", monospace;
   overflow-x: hidden;
   background: #000;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Navegação entre páginas */
@@ -26,15 +27,15 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   position: relative;
   z-index: 10;
 }
 
-/* Tipografia */
+/* Tipografia Responsiva */
 .pixel-font {
   font-family: "Courier New", monospace;
-  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
 }
 
 .text-center {
@@ -47,26 +48,28 @@ body {
 }
 
 .main-title {
-  font-size: 4rem;
+  font-size: 2rem;
   color: white;
   margin-bottom: 1rem;
   animation: pulse 2s infinite;
-  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.8);
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+  line-height: 1.2;
 }
 
 .subtitle {
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #fde047;
   animation: bounce 2s infinite;
+  margin-bottom: 2rem;
 }
 
-/* Nuvens animadas */
+/* Nuvens animadas - Otimizadas para mobile */
 .cloud {
   position: absolute;
   background: white;
   border-radius: 50px;
-  opacity: 0.8;
-  animation: float-cloud 20s infinite linear;
+  opacity: 0.6;
+  animation: float-cloud 25s infinite linear;
 }
 
 .cloud:before,
@@ -78,72 +81,72 @@ body {
 }
 
 .cloud-1 {
-  width: 80px;
-  height: 40px;
+  width: 60px;
+  height: 30px;
   top: 10%;
-  left: -100px;
+  left: -80px;
 }
 
 .cloud-1:before {
-  width: 50px;
-  height: 50px;
-  top: -25px;
-  left: 10px;
+  width: 35px;
+  height: 35px;
+  top: -18px;
+  left: 8px;
 }
 
 .cloud-1:after {
-  width: 60px;
-  height: 40px;
-  top: -15px;
-  right: 10px;
+  width: 45px;
+  height: 30px;
+  top: -10px;
+  right: 8px;
 }
 
 .cloud-2 {
-  width: 60px;
-  height: 30px;
+  width: 45px;
+  height: 22px;
   top: 20%;
-  right: -100px;
-  animation-duration: 25s;
+  right: -70px;
+  animation-duration: 30s;
   animation-direction: reverse;
 }
 
 .cloud-2:before {
-  width: 40px;
-  height: 40px;
-  top: -20px;
-  left: 5px;
+  width: 30px;
+  height: 30px;
+  top: -15px;
+  left: 4px;
 }
 
 .cloud-2:after {
-  width: 50px;
-  height: 30px;
-  top: -10px;
-  right: 5px;
+  width: 35px;
+  height: 22px;
+  top: -8px;
+  right: 4px;
 }
 
 .cloud-3 {
-  width: 100px;
-  height: 50px;
+  width: 70px;
+  height: 35px;
   top: 5%;
-  left: -120px;
-  animation-duration: 30s;
+  left: -90px;
+  animation-duration: 35s;
 }
 
 .cloud-3:before {
-  width: 60px;
-  height: 60px;
-  top: -30px;
-  left: 15px;
+  width: 45px;
+  height: 45px;
+  top: -22px;
+  left: 12px;
 }
 
 .cloud-3:after {
-  width: 70px;
-  height: 50px;
-  top: -20px;
-  right: 15px;
+  width: 50px;
+  height: 35px;
+  top: -15px;
+  right: 12px;
 }
 
-/* Moedas flutuantes */
+/* Moedas flutuantes - Responsivas */
 .floating-coins {
   position: absolute;
   top: 0;
@@ -156,58 +159,61 @@ body {
 
 .coin {
   position: absolute;
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   background: #fbbf24;
-  border: 4px solid #d97706;
+  border: 3px solid #d97706;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  font-size: 0.8rem;
   color: #92400e;
   cursor: pointer;
   pointer-events: auto;
   animation: bounce 2s infinite;
+  touch-action: manipulation;
 }
 
 .floating-coins .coin:first-child {
-  top: 5rem;
-  left: 2.5rem;
+  top: 4rem;
+  left: 1rem;
 }
 
 .floating-coins .coin:last-child {
-  top: 8rem;
-  right: 5rem;
+  top: 6rem;
+  right: 1rem;
   animation-delay: 0.5s;
 }
 
 .score {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 0.5rem;
+  right: 0.5rem;
   background: #000;
   color: #10b981;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.8rem;
   border: 2px solid #10b981;
   border-radius: 4px;
   font-family: "Courier New", monospace;
-  z-index: 20;
+  font-size: 0.8rem;
+  z-index: 25;
 }
 
-/* Personagem Mario */
+/* Personagem Mario - Responsivo */
 .mario-character {
   display: flex;
   justify-content: center;
-  margin: 2rem 0;
+  margin: 1.5rem 0;
 }
 
 .character-sprite {
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   background: #dc2626;
-  border: 4px solid #991b1b;
-  border-radius: 8px;
+  border: 3px solid #991b1b;
+  border-radius: 6px;
   position: relative;
   animation: bounce 2s infinite;
 }
@@ -215,10 +221,10 @@ body {
 .character-sprite:before {
   content: "";
   position: absolute;
-  top: 4px;
-  left: 4px;
-  width: 8px;
-  height: 8px;
+  top: 3px;
+  left: 3px;
+  width: 6px;
+  height: 6px;
   background: white;
   border-radius: 50%;
 }
@@ -226,22 +232,22 @@ body {
 .character-sprite:after {
   content: "";
   position: absolute;
-  top: 4px;
-  right: 4px;
-  width: 8px;
-  height: 8px;
+  top: 3px;
+  right: 3px;
+  width: 6px;
+  height: 6px;
   background: white;
   border-radius: 50%;
 }
 
-/* Caixa de mensagem */
+/* Caixa de mensagem - Responsiva */
 .message-box {
-  max-width: 800px;
-  margin: 2rem auto;
+  max-width: 100%;
+  margin: 1.5rem auto;
   background: #000;
-  border: 4px solid white;
-  border-radius: 12px;
-  padding: 1.5rem;
+  border: 3px solid white;
+  border-radius: 8px;
+  padding: 1rem;
   color: #10b981;
   opacity: 0;
   transform: translateY(20px);
@@ -254,33 +260,32 @@ body {
 }
 
 .gamepad-icon {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
   animation: spin 2s linear infinite;
 }
 
 .terminal-header h2 {
   color: #fbbf24;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 .terminal-content p {
-  margin: 0.5rem 0;
-  font-size: 0.9rem;
-  line-height: 1.6;
+  margin: 0.4rem 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
 }
 
 .highlight {
   color: #fbbf24 !important;
 }
 
-/* Menu de navegação */
+/* Menu de navegação - Mobile First */
 .game-menu {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  max-width: 1000px;
-  margin: 3rem auto;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 2rem auto;
 }
 
 .game-button {
@@ -288,17 +293,19 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
-  border: 4px solid white;
-  border-radius: 12px;
+  padding: 1.2rem;
+  border: 3px solid white;
+  border-radius: 8px;
   color: white;
   background: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  min-height: 120px;
+  min-height: 100px;
   position: relative;
   overflow: hidden;
   font-family: inherit;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .game-button.red {
@@ -314,28 +321,25 @@ body {
   background: #ec4899;
 }
 
-.game-button:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
+.game-button:hover,
 .game-button:active {
   transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .button-icon {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
 }
 
 .button-title {
   font-weight: bold;
-  font-size: 1rem;
-  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
 }
 
 .button-subtitle {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   opacity: 0.9;
 }
 
@@ -358,32 +362,37 @@ body {
 /* Créditos */
 .credits {
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 2rem;
   color: white;
   opacity: 0.75;
 }
 
 .credits p {
-  margin: 0.5rem 0;
+  margin: 0.3rem 0;
+  font-size: 0.8rem;
 }
 
-/* Header das páginas */
+/* Header das páginas - Responsivo */
 .page-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .back-button {
   background: none;
   border: none;
   color: white;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: bold;
   cursor: pointer;
   transition: color 0.3s;
   font-family: inherit;
+  position: relative;
+  z-index: 25;
+  padding: 0.5rem;
+  touch-action: manipulation;
 }
 
 .back-button:hover {
@@ -393,20 +402,22 @@ body {
 .level-indicator {
   color: white;
   font-family: "Courier New", monospace;
+  font-size: 0.8rem;
 }
 
 .page-title {
-  font-size: 3rem;
+  font-size: 2rem;
   color: white;
   margin-bottom: 1rem;
   animation: pulse 2s infinite;
-  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.8);
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+  line-height: 1.2;
 }
 
 .page-subtitle {
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: #fbbf24;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 /* Página Motivos */
@@ -425,40 +436,41 @@ body {
 }
 
 .reason-display {
-  max-width: 600px;
-  margin: 0 auto 3rem;
+  max-width: 100%;
+  margin: 0 auto 2rem;
   background: #000;
-  border: 4px solid white;
-  border-radius: 12px;
-  padding: 2rem;
+  border: 3px solid white;
+  border-radius: 8px;
+  padding: 1.5rem;
   text-align: center;
   color: white;
 }
 
 .reason-icon {
-  font-size: 4rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
   animation: bounce 2s infinite;
 }
 
 .reason-title {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #fbbf24;
   margin-bottom: 1rem;
+  line-height: 1.3;
 }
 
 .reason-description {
   color: #10b981;
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 0.9rem;
+  line-height: 1.5;
   margin-bottom: 1.5rem;
 }
 
 .progress-bar {
   width: 100%;
-  height: 8px;
+  height: 6px;
   background: #374151;
-  border-radius: 4px;
+  border-radius: 3px;
   overflow: hidden;
   margin-bottom: 0.5rem;
 }
@@ -472,58 +484,65 @@ body {
 
 .progress-text {
   color: white;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
 }
 
 .reasons-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 3rem;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .reason-card {
   background: rgba(0, 0, 0, 0.7);
-  border: 3px solid white;
-  border-radius: 12px;
-  padding: 1.5rem;
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 1rem;
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
   color: white;
+  touch-action: manipulation;
 }
 
-.reason-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+.reason-card:hover,
+.reason-card:active {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   border-color: #fbbf24;
 }
 
 .reason-card.active {
   border-color: #f59e0b;
   background: rgba(245, 158, 11, 0.2);
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .bonus-message {
   text-align: center;
   background: linear-gradient(to right, #7c3aed, #ec4899);
-  border: 4px solid white;
-  border-radius: 12px;
-  padding: 2rem;
-  margin-bottom: 3rem;
+  border: 3px solid white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
   color: white;
 }
 
 .bonus-icon {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
   animation: pulse 2s infinite;
 }
 
 .bonus-message h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-bottom: 1rem;
+}
+
+.bonus-message p {
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .navigation {
@@ -545,22 +564,22 @@ body {
 }
 
 .memory-viewer {
-  max-width: 800px;
-  margin: 0 auto 3rem;
+  max-width: 100%;
+  margin: 0 auto 2rem;
   position: relative;
   background: linear-gradient(to bottom right, #f87171, #ec4899);
-  border: 4px solid white;
-  border-radius: 12px;
-  padding: 2rem;
+  border: 3px solid white;
+  border-radius: 8px;
+  padding: 1rem;
   color: white;
 }
 
 .polaroid {
   background: white;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  margin-bottom: 1.5rem;
+  padding: 0.8rem;
+  border-radius: 6px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1rem;
   transform: rotate(1deg);
   transition: transform 0.3s;
 }
@@ -571,12 +590,12 @@ body {
 
 .photo {
   background: #e5e7eb;
-  height: 200px;
+  height: 150px;
   border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 4rem;
+  font-size: 3rem;
   margin-bottom: 0.5rem;
 }
 
@@ -584,6 +603,7 @@ body {
   text-align: center;
   color: #374151;
   font-family: "Comic Sans MS", cursive;
+  font-size: 0.9rem;
 }
 
 .memory-info {
@@ -592,15 +612,17 @@ body {
 
 .memory-date,
 .memory-location {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   font-weight: bold;
+  font-size: 0.8rem;
 }
 
 .memory-description {
   background: rgba(0, 0, 0, 0.3);
-  padding: 1rem;
-  border-radius: 8px;
-  line-height: 1.6;
+  padding: 0.8rem;
+  border-radius: 6px;
+  line-height: 1.5;
+  font-size: 0.9rem;
 }
 
 .nav-arrow {
@@ -610,39 +632,41 @@ body {
   background: rgba(255, 255, 255, 0.2);
   border: none;
   color: white;
-  font-size: 1.5rem;
-  width: 3rem;
-  height: 3rem;
+  font-size: 1.2rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s;
+  touch-action: manipulation;
 }
 
-.nav-arrow:hover {
+.nav-arrow:hover,
+.nav-arrow:active {
   background: rgba(255, 255, 255, 0.4);
 }
 
 .nav-arrow.left {
-  left: 1rem;
+  left: 0.5rem;
 }
 
 .nav-arrow.right {
-  right: 1rem;
+  right: 0.5rem;
 }
 
 .memory-thumbnails {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
-  margin-bottom: 3rem;
+  gap: 0.4rem;
+  margin-bottom: 2rem;
   overflow-x: auto;
-  padding-bottom: 1rem;
+  padding: 0.5rem 0;
 }
 
 .memory-thumb {
-  width: 60px;
-  height: 60px;
-  border: 3px solid white;
+  width: 50px;
+  height: 50px;
+  border: 2px solid white;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.2);
   display: flex;
@@ -651,10 +675,12 @@ body {
   cursor: pointer;
   transition: all 0.3s;
   flex-shrink: 0;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  touch-action: manipulation;
 }
 
-.memory-thumb:hover {
+.memory-thumb:hover,
+.memory-thumb:active {
   transform: scale(1.1);
   background: rgba(255, 255, 255, 0.3);
 }
@@ -662,23 +688,33 @@ body {
 .memory-thumb.active {
   border-color: #fbbf24;
   background: rgba(251, 191, 36, 0.3);
-  transform: scale(1.2);
+  transform: scale(1.15);
 }
 
 .achievement-message {
   text-align: center;
   background: linear-gradient(to right, #ec4899, #7c3aed);
-  border: 4px solid white;
-  border-radius: 12px;
-  padding: 2rem;
-  margin-bottom: 3rem;
+  border: 3px solid white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
   color: white;
 }
 
 .achievement-icon {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
   animation: bounce 2s infinite;
+}
+
+.achievement-message h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.achievement-message p {
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 /* Página Last Dance */
@@ -688,13 +724,13 @@ body {
 
 .disco-ball {
   position: absolute;
-  top: 2.5rem;
+  top: 2rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 5rem;
-  height: 5rem;
+  width: 3.5rem;
+  height: 3.5rem;
   background: linear-gradient(to bottom right, #d1d5db, #9ca3af);
-  border: 4px solid white;
+  border: 3px solid white;
   border-radius: 50%;
   animation: float 3s ease-in-out infinite;
 }
@@ -714,29 +750,29 @@ body {
 
 .spotlight {
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   opacity: 0;
   transition: opacity 0.5s;
 }
 
 .spotlight-1 {
-  top: 20%;
-  left: 10%;
-  background: radial-gradient(circle, rgba(255, 0, 255, 0.3) 0%, transparent 70%);
+  top: 15%;
+  left: 5%;
+  background: radial-gradient(circle, rgba(255, 0, 255, 0.2) 0%, transparent 70%);
 }
 
 .spotlight-2 {
-  top: 30%;
-  right: 15%;
-  background: radial-gradient(circle, rgba(0, 255, 255, 0.3) 0%, transparent 70%);
+  top: 25%;
+  right: 10%;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.2) 0%, transparent 70%);
 }
 
 .spotlight-3 {
-  bottom: 20%;
-  left: 50%;
-  background: radial-gradient(circle, rgba(255, 255, 0, 0.3) 0%, transparent 70%);
+  bottom: 15%;
+  left: 45%;
+  background: radial-gradient(circle, rgba(255, 255, 0, 0.2) 0%, transparent 70%);
 }
 
 .spotlight.active {
@@ -754,86 +790,90 @@ body {
 }
 
 .music-player {
-  max-width: 400px;
-  margin: 0 auto 3rem;
+  max-width: 100%;
+  margin: 0 auto 2rem;
 }
 
 .player-display {
   background: #000;
-  border: 4px solid white;
-  border-radius: 12px;
-  padding: 1.5rem;
+  border: 3px solid white;
+  border-radius: 8px;
+  padding: 1.2rem;
   text-align: center;
   color: white;
 }
 
 .music-icon {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
   animation: pulse 2s infinite;
 }
 
 .player-display h3 {
   margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
 .play-button {
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
   background: linear-gradient(45deg, #8b5cf6, #ec4899);
-  border: 4px solid white;
+  border: 3px solid white;
   color: white;
-  font-size: 2rem;
+  font-size: 1.5rem;
   cursor: pointer;
   transition: all 0.3s;
   margin-bottom: 1rem;
+  touch-action: manipulation;
 }
 
-.play-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+.play-button:hover,
+.play-button:active {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
 }
 
 .player-status {
   color: #9ca3af;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
 }
 
 .lyrics-display {
-  max-width: 600px;
-  margin: 0 auto 3rem;
+  max-width: 100%;
+  margin: 0 auto 2rem;
   background: rgba(0, 0, 0, 0.8);
-  border: 3px solid white;
-  border-radius: 12px;
-  padding: 2rem;
+  border: 2px solid white;
+  border-radius: 8px;
+  padding: 1.5rem;
   color: white;
   text-align: center;
-  min-height: 120px;
+  min-height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .current-lyric {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
   animation: bounce 2s infinite;
+  line-height: 1.3;
 }
 
 .verse-counter {
   color: white;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   opacity: 0.75;
 }
 
 .dance-floor {
-  width: 300px;
-  height: 300px;
-  margin: 0 auto 3rem;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto 2rem;
   position: relative;
-  border: 4px solid white;
-  border-radius: 12px;
+  border: 3px solid white;
+  border-radius: 8px;
   overflow: hidden;
   background: #000;
 }
@@ -847,9 +887,9 @@ body {
 }
 
 .dancer {
-  font-size: 3rem;
+  font-size: 2.5rem;
   display: inline-block;
-  margin: 0 1rem;
+  margin: 0 0.8rem;
 }
 
 .dance-floor.dancing .dancer-1 {
@@ -883,26 +923,27 @@ body {
 .romantic-message {
   text-align: center;
   background: linear-gradient(to right, #7c3aed, #ec4899);
-  border: 4px solid white;
-  border-radius: 12px;
-  padding: 2rem;
-  margin-bottom: 3rem;
+  border: 3px solid white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
   color: white;
 }
 
 .heart-icon {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
 .romantic-message h3 {
-  font-size: 1.875rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
 }
 
 .message-content p {
-  margin-bottom: 1rem;
-  line-height: 1.6;
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+  font-size: 0.9rem;
 }
 
 .pulse {
@@ -934,18 +975,18 @@ body {
 }
 
 .crown-icon {
-  font-size: 4rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
   animation: bounce 2s infinite;
 }
 
 .final-message {
-  max-width: 800px;
-  margin: 0 auto 3rem;
+  max-width: 100%;
+  margin: 0 auto 2rem;
   background: #000;
-  border: 4px solid white;
-  border-radius: 12px;
-  padding: 2rem;
+  border: 3px solid white;
+  border-radius: 8px;
+  padding: 1.5rem;
   text-align: center;
   color: white;
   opacity: 0;
@@ -953,111 +994,116 @@ body {
 }
 
 .completion-badge {
-  font-size: 4rem;
-  margin-bottom: 1.5rem;
+  font-size: 3rem;
+  margin-bottom: 1rem;
   animation: bounce 2s infinite;
 }
 
 .final-message h2 {
-  font-size: 1.875rem;
+  font-size: 1.3rem;
   color: #fbbf24;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .completion-text p {
-  margin-bottom: 1rem;
-  line-height: 1.6;
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+  font-size: 0.9rem;
 }
 
 .promise-section {
-  max-width: 700px;
-  margin: 0 auto 3rem;
+  max-width: 100%;
+  margin: 0 auto 2rem;
   background: linear-gradient(to right, #7c3aed, #ec4899);
-  border: 4px solid white;
-  border-radius: 12px;
-  padding: 2rem;
+  border: 3px solid white;
+  border-radius: 8px;
+  padding: 1.5rem;
   color: white;
   opacity: 0;
   animation: slideUp 1s ease-out 3s forwards;
 }
 
 .promise-heart {
-  font-size: 3rem;
+  font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   animation: pulse 2s infinite;
 }
 
 .promise-section h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .promises-list {
-  space-y: 1rem;
+  space-y: 0.8rem;
 }
 
 .promise-item {
-  padding: 0.75rem 0;
+  padding: 0.6rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.8rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 .final-question {
-  max-width: 600px;
+  max-width: 100%;
   margin: 0 auto;
   text-align: center;
   background: #000;
-  border: 4px solid #fbbf24;
-  border-radius: 12px;
-  padding: 2rem;
+  border: 3px solid #fbbf24;
+  border-radius: 8px;
+  padding: 1.5rem;
   color: white;
   opacity: 0;
   animation: bounceIn 1s ease-out 5s forwards;
 }
 
 .question-target {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
 .final-question h3 {
-  font-size: 1.875rem;
+  font-size: 1.3rem;
   color: #fbbf24;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .question-text {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
 }
 
 .main-question {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #ec4899;
   font-weight: bold;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   animation: pulse 2s infinite;
+  line-height: 1.3;
 }
 
 .answer-buttons {
   display: flex;
-  justify-content: center;
-  gap: 1.5rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 .yes-button {
   background: linear-gradient(45deg, #10b981, #059669);
-  border: 4px solid white;
-  border-radius: 12px;
+  border: 3px solid white;
+  border-radius: 8px;
   color: white;
   font-weight: bold;
   padding: 1rem 2rem;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   cursor: pointer;
   transition: all 0.3s;
   display: flex;
@@ -1065,56 +1111,68 @@ body {
   gap: 0.5rem;
   animation: pulse 2s infinite;
   font-family: inherit;
+  touch-action: manipulation;
+  min-width: 200px;
+  justify-content: center;
 }
 
-.yes-button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+.yes-button:hover,
+.yes-button:active {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
 }
 
 .no-button {
   background: linear-gradient(45deg, #6b7280, #4b5563);
-  border: 4px solid #9ca3af;
-  border-radius: 12px;
+  border: 3px solid #9ca3af;
+  border-radius: 8px;
   color: #d1d5db;
   font-weight: bold;
   padding: 1rem 2rem;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   cursor: pointer;
   transition: all 0.3s;
   opacity: 0.5;
   font-family: inherit;
+  touch-action: manipulation;
+  min-width: 200px;
 }
 
-.no-button:hover {
+.no-button:hover,
+.no-button:active {
   opacity: 0.3;
-  transform: scale(0.95);
+  transform: scale(0.98);
 }
 
 .celebration {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   background: linear-gradient(to right, #10b981, #3b82f6);
-  border: 4px solid white;
-  border-radius: 12px;
-  padding: 2rem;
+  border: 3px solid white;
+  border-radius: 8px;
+  padding: 1.5rem;
   text-align: center;
   color: white;
   animation: fadeIn 1s ease-out;
 }
 
 .celebration-icon {
-  font-size: 4rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
 }
 
 .celebration h3 {
-  font-size: 1.875rem;
+  font-size: 1.3rem;
   margin-bottom: 1rem;
 }
 
+.celebration p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
 .sparkle {
-  font-size: 2rem;
-  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  margin-top: 1rem;
   animation: spin 2s linear infinite;
 }
 
@@ -1134,7 +1192,7 @@ body {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
 }
 
@@ -1160,7 +1218,7 @@ body {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(15px);
   }
   to {
     opacity: 1;
@@ -1171,7 +1229,7 @@ body {
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -1182,14 +1240,14 @@ body {
 @keyframes bounceIn {
   0% {
     opacity: 0;
-    transform: scale(0.3);
+    transform: scale(0.5);
   }
   50% {
     opacity: 1;
-    transform: scale(1.05);
+    transform: scale(1.02);
   }
   70% {
-    transform: scale(0.9);
+    transform: scale(0.98);
   }
   100% {
     opacity: 1;
@@ -1203,17 +1261,17 @@ body {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
 }
 
 @keyframes pulse-light {
   0%,
   100% {
-    opacity: 0.3;
+    opacity: 0.2;
   }
   50% {
-    opacity: 0.8;
+    opacity: 0.6;
   }
 }
 
@@ -1238,25 +1296,312 @@ body {
 @keyframes dance1 {
   0%,
   100% {
-    transform: rotate(-10deg) scale(1);
+    transform: rotate(-8deg) scale(1);
   }
   50% {
-    transform: rotate(10deg) scale(1.1);
+    transform: rotate(8deg) scale(1.05);
   }
 }
 
 @keyframes dance2 {
   0%,
   100% {
-    transform: rotate(10deg) scale(1);
+    transform: rotate(8deg) scale(1);
   }
   50% {
-    transform: rotate(-10deg) scale(1.1);
+    transform: rotate(-8deg) scale(1.05);
   }
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Media Queries - Tablet */
+@media (min-width: 768px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  .main-title {
+    font-size: 3rem;
+  }
+
+  .page-title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .page-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .game-menu {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .game-button {
+    min-height: 110px;
+    padding: 1.5rem;
+  }
+
+  .button-icon {
+    font-size: 1.4rem;
+  }
+
+  .button-title {
+    font-size: 1rem;
+  }
+
+  .reasons-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .coin {
+    width: 1.8rem;
+    height: 1.8rem;
+    font-size: 0.9rem;
+  }
+
+  .character-sprite {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .memory-viewer {
+    padding: 1.5rem;
+  }
+
+  .photo {
+    height: 180px;
+    font-size: 3.5rem;
+  }
+
+  .dance-floor {
+    width: 280px;
+    height: 280px;
+  }
+
+  .dancer {
+    font-size: 2.8rem;
+  }
+
+  .disco-ball {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .answer-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* Media Queries - Desktop */
+@media (min-width: 1024px) {
+  .container {
+    padding: 2rem;
+  }
+
+  .main-title {
+    font-size: 4rem;
+  }
+
+  .page-title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+  }
+
+  .page-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .game-menu {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1000px;
+  }
+
+  .game-button {
+    min-height: 120px;
+    padding: 1.5rem;
+  }
+
+  .game-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  .button-icon {
+    font-size: 1.5rem;
+  }
+
+  .reasons-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .reason-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .coin {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+
+  .floating-coins .coin:first-child {
+    top: 5rem;
+    left: 2.5rem;
+  }
+
+  .floating-coins .coin:last-child {
+    top: 8rem;
+    right: 5rem;
+  }
+
+  .character-sprite {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .memory-viewer {
+    max-width: 800px;
+    padding: 2rem;
+  }
+
+  .photo {
+    height: 200px;
+    font-size: 4rem;
+  }
+
+  .memory-thumb {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  .dance-floor {
+    width: 300px;
+    height: 300px;
+  }
+
+  .dancer {
+    font-size: 3rem;
+  }
+
+  .disco-ball {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .spotlight {
+    width: 200px;
+    height: 200px;
+  }
+
+  .current-lyric {
+    font-size: 2rem;
+  }
+
+  .play-button {
+    width: 5rem;
+    height: 5rem;
+    font-size: 2rem;
+  }
+
+  .final-message {
+    max-width: 800px;
+  }
+
+  .promise-section {
+    max-width: 700px;
+  }
+
+  .final-question {
+    max-width: 600px;
+  }
+
+  .credits {
+    margin-top: 3rem;
+  }
+
+  .credits p {
+    font-size: 1rem;
+  }
+}
+
+/* Media Queries - Large Desktop */
+@media (min-width: 1440px) {
+  .main-title {
+    font-size: 4.5rem;
+  }
+
+  .page-title {
+    font-size: 3.5rem;
+  }
+
+  .container {
+    max-width: 1400px;
+  }
+}
+
+/* Otimizações para dispositivos touch */
+@media (hover: none) and (pointer: coarse) {
+  .game-button:hover:before {
+    left: 0;
+  }
+
+  .reason-card:hover {
+    transform: none;
+    border-color: white;
+  }
+
+  .reason-card:active {
+    transform: scale(0.98);
+    border-color: #fbbf24;
+  }
+
+  .memory-thumb:hover {
+    transform: none;
+  }
+
+  .memory-thumb:active {
+    transform: scale(1.1);
+  }
+
+  .nav-arrow:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .nav-arrow:active {
+    background: rgba(255, 255, 255, 0.4);
+  }
+}
+
+/* Melhorias de acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Orientação landscape em mobile */
+@media (max-width: 768px) and (orientation: landscape) {
   .main-title {
     font-size: 2.5rem;
   }
@@ -1265,30 +1610,20 @@ body {
     font-size: 2rem;
   }
 
-  .game-menu {
-    grid-template-columns: 1fr;
-  }
-
   .container {
     padding: 1rem;
   }
 
-  .answer-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .memory-viewer {
-    padding: 1rem;
+  .game-menu {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .dance-floor {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
   }
-}
 
-.back-button {
-  position: relative;
-  z-index: 25;
+  .photo {
+    height: 120px;
+  }
 }
