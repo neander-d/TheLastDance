@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Amor - Um Site Especial Para Você 💖</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page active" id="home">
+        <div class="background-effects">
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+        </div>
+
+        <div class="floating-coins">
+            <div class="coin" onclick="collectCoin()">$</div>
+            <div class="coin" onclick="collectCoin()">$</div>
+        </div>
+
+        <div class="score">COINS: <span id="coinCount">000</span></div>
+
+        <div class="container">
+            <header class="text-center">
+                <h1 class="main-title">🎮 GAME OVER? 🎮</h1>
+                <div class="subtitle">Press START to continue...</div>
+            </header>
+
+            <div class="mario-character">
+                <div class="character-sprite"></div>
+            </div>
+
+            <div class="message-box" id="messageBox">
+                <div class="terminal-header">
+                    <div class="gamepad-icon">🎮</div>
+                    <h2>SISTEMA INICIADO...</h2>
+                </div>
+                <div class="terminal-content">
+                    <p>> Olá, meu amor... 💕</p>
+                    <p>> Eu sei que não sou muito bom com palavras...</p>
+                    <p>> Então resolvi falar do meu jeito - através do código!</p>
+                    <p>> Este site é minha forma de dizer o quanto você significa para mim.</p>
+                    <p class="highlight">> Será que você me dá uma segunda chance? 🥺</p>
+                </div>
+            </div>
+
+            <nav class="game-menu">
+                <button class="game-button red" onclick="navigateTo('motivos')">
+                    <div class="button-icon">💖</div>
+                    <div class="button-title">MOTIVOS</div>
+                    <div class="button-subtitle">Para voltarmos</div>
+                </button>
+
+                <button class="game-button blue" onclick="navigateTo('lembrancas')">
+                    <div class="button-icon">✨</div>
+                    <div class="button-title">LEMBRANÇAS</div>
+                    <div class="button-subtitle">Nossos momentos</div>
+                </button>
+
+                <button class="game-button purple" onclick="navigateTo('last-dance')">
+                    <div class="button-icon">💃</div>
+                    <div class="button-title">LAST DANCE</div>
+                    <div class="button-subtitle">Uma última chance</div>
+                </button>
+
+                <button class="game-button pink" onclick="navigateTo('final')">
+                    <div class="button-icon">💖</div>
+                    <div class="button-title">FINAL</div>
+                    <div class="button-subtitle">Minha promessa</div>
+                </button>
+            </nav>
+
+            <footer class="credits">
+                <p>Feito com 💖 e muito café por alguém que te ama</p>
+                <p>Use as setas do teclado para navegar como um verdadeiro gamer! ⬅️➡️</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Página Motivos -->
+    <div class="page" id="motivos">
+        <div class="floating-hearts"></div>
+        
+        <div class="container">
+            <header class="page-header">
+                <button class="back-button" onclick="navigateTo('home')">
+                    ← VOLTAR
+                </button>
+                <div class="level-indicator">LEVEL 1</div>
+            </header>
+
+            <div class="text-center">
+                <h1 class="page-title">💖 MOTIVOS PARA VOLTARMOS 💖</h1>
+                <p class="page-subtitle">Carregando razões do coração...</p>
+            </div>
+
+            <div class="reason-display" id="reasonDisplay">
+                <div class="reason-icon">💕</div>
+                <h2 class="reason-title">Porque eu te amo de verdade</h2>
+                <p class="reason-description">Não é só paixão, é amor genuíno que cresce a cada dia. Você é minha pessoa favorita no mundo inteiro!</p>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <p class="progress-text">Motivo 1 de 6</p>
+            </div>
+
+            <div class="reasons-grid" id="reasonsGrid"></div>
+
+            <div class="bonus-message">
+                <div class="bonus-icon">💖</div>
+                <h3>BONUS STAGE DESBLOQUEADO!</h3>
+                <p>"Eu prometo ser o namorado que você merece. Vamos escrever nossa própria história de amor, cheia de aventuras, risadas e muito carinho. Você topa essa missão comigo?"</p>
+            </div>
+
+            <div class="navigation">
+                <button class="game-button blue" onclick="navigateTo('lembrancas')">
+                    ✨ PRÓXIMA FASE
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página Lembranças -->
+    <div class="page" id="lembrancas">
+        <div class="stars-background"></div>
+        
+        <div class="container">
+            <header class="page-header">
+                <button class="back-button" onclick="navigateTo('home')">
+                    ← VOLTAR
+                </button>
+                <div class="level-indicator">LEVEL 2</div>
+            </header>
+
+            <div class="text-center">
+                <h1 class="page-title">📸 NOSSAS LEMBRANÇAS 📸</h1>
+                <p class="page-subtitle">Carregando álbum de memórias...</p>
+            </div>
+
+            <div class="memory-viewer" id="memoryViewer">
+                <div class="polaroid">
+                    <div class="photo">💕</div>
+                    <div class="photo-caption">Nosso Primeiro Encontro</div>
+                </div>
+                
+                <div class="memory-info">
+                    <div class="memory-date">📅 O dia que mudou tudo</div>
+                    <div class="memory-location">📍 Naquele lugar especial</div>
+                    <p class="memory-description">Lembro como se fosse ontem... seus olhos brilhando, seu sorriso tímido. Foi quando soube que você era especial.</p>
+                </div>
+
+                <button class="nav-arrow left" onclick="previousMemory()">←</button>
+                <button class="nav-arrow right" onclick="nextMemory()">→</button>
+            </div>
+
+            <div class="memory-thumbnails" id="memoryThumbnails"></div>
+
+            <div class="achievement-message">
+                <div class="achievement-icon">📸</div>
+                <h3>ACHIEVEMENT UNLOCKED!</h3>
+                <p>"Cada lembrança nossa é um tesouro que guardo no coração. Quero criar milhões de novas memórias ao seu lado. Nossa história ainda tem muitos capítulos para escrever!"</p>
+            </div>
+
+            <div class="navigation">
+                <button class="game-button purple" onclick="navigateTo('last-dance')">
+                    💃 ÚLTIMA DANÇA
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página Last Dance -->
+    <div class="page" id="last-dance">
+        <div class="disco-ball"></div>
+        <div class="spotlights">
+            <div class="spotlight spotlight-1"></div>
+            <div class="spotlight spotlight-2"></div>
+            <div class="spotlight spotlight-3"></div>
+        </div>
+        <div class="dancing-particles" id="dancingParticles"></div>
+        
+        <div class="container">
+            <header class="page-header">
+                <button class="back-button" onclick="navigateTo('home')">
+                    ← VOLTAR
+                </button>
+                <div class="level-indicator">LEVEL 3</div>
+            </header>
+
+            <div class="text-center">
+                <h1 class="page-title">💃 THE LAST DANCE 🕺</h1>
+                <p class="page-subtitle">Uma última chance para nosso amor...</p>
+            </div>
+
+            <div class="music-player">
+                <div class="player-display">
+                    <div class="music-icon">🎵</div>
+                    <h3>🎵 Nossa Música 🎵</h3>
+                    <button class="play-button" id="playButton" onclick="toggleMusic()">
+                        <span id="playIcon">▶️</span>
+                    </button>
+                    <p class="player-status" id="playerStatus">Clique para tocar</p>
+                </div>
+            </div>
+
+            <div class="lyrics-display" id="lyricsDisplay">
+                <div class="current-lyric">🎵 Pronto para nossa última dança? 🎵</div>
+                <div class="verse-counter" id="verseCounter"></div>
+            </div>
+
+            <div class="dance-floor" id="danceFloor">
+                <div class="dancers">
+                    <div class="dancer dancer-1">🕺</div>
+                    <div class="dancer dancer-2">💃</div>
+                </div>
+                <div class="floor-lights" id="floorLights"></div>
+            </div>
+
+            <div class="romantic-message">
+                <div class="heart-icon">💖</div>
+                <h3>FINAL BOSS: MEU CORAÇÃO</h3>
+                <div class="message-content">
+                    <p>"Se esta for realmente nossa última dança, quero que saiba que você foi a música mais bonita que já ouvi na minha vida."</p>
+                    <p>"Mas eu ainda acredito que podemos ter muitas outras danças juntos. Lentas, rápidas, desajeitadas, perfeitas... todas elas."</p>
+                    <p class="highlight">"Me dê uma chance de provar que ainda sei os passos do nosso amor?"</p>
+                </div>
+            </div>
+
+            <div class="navigation">
+                <button class="game-button pink pulse" onclick="navigateTo('final')">
+                    💖 GRAN FINALE
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página Final -->
+    <div class="page" id="final">
+        <div class="fireworks" id="fireworks"></div>
+        <div class="floating-hearts-final"></div>
+        
+        <div class="container">
+            <header class="page-header">
+                <button class="back-button" onclick="navigateTo('home')">
+                    ← VOLTAR
+                </button>
+                <div class="level-indicator">FINAL BOSS</div>
+            </header>
+
+            <div class="text-center">
+                <div class="crown-icon">👑</div>
+                <h1 class="page-title">💖 GRAN FINALE 💖</h1>
+                <p class="page-subtitle">O momento da verdade chegou...</p>
+            </div>
+
+            <div class="final-message" id="finalMessage">
+                <div class="completion-badge">👑</div>
+                <h2>VOCÊ CHEGOU AO FINAL!</h2>
+                <div class="completion-text">
+                    <p>Parabéns! Você completou todos os níveis do meu coração! 🎮</p>
+                    <p>Espero que tenha sentido todo o amor que coloquei em cada linha de código, em cada animação, em cada palavra deste site.</p>
+                    <p>Porque é assim que eu te amo - com dedicação, criatividade e muito carinho. ✨</p>
+                </div>
+            </div>
+
+            <div class="promise-section" id="promiseSection">
+                <div class="promise-heart">💖</div>
+                <h3>MINHA PROMESSA PARA VOCÊ</h3>
+                <div class="promises-list">
+                    <div class="promise-item">💝 Prometo te amar todos os dias, não só nos fáceis</div>
+                    <div class="promise-item">🌟 Prometo ser o parceiro que você merece</div>
+                    <div class="promise-item">🎮 Prometo continuar criando momentos especiais para nós</div>
+                    <div class="promise-item">💫 Prometo crescer e aprender com nossos erros</div>
+                    <div class="promise-item">🏠 Prometo construir um futuro incrível ao seu lado</div>
+                    <div class="promise-item">💖 Prometo que este não será nosso "game over"</div>
+                </div>
+            </div>
+
+            <div class="final-question" id="finalQuestion">
+                <div class="question-target">🎯</div>
+                <h3>ÚLTIMA PERGUNTA</h3>
+                <p class="question-text">Depois de tudo que passamos juntos, de todas as memórias que criamos, de todo o amor que ainda sinto por você...</p>
+                <p class="main-question">VOCÊ ME DÁ UMA SEGUNDA CHANCE?</p>
+                
+                <div class="answer-buttons">
+                    <button class="yes-button" onclick="handleYes()">
+                        💖 SIM!
+                    </button>
+                    <button class="no-button" onclick="handleNo()">
+                        💔 Não...
+                    </button>
+                </div>
+            </div>
+
+            <div class="celebration" id="celebration" style="display: none;">
+                <div class="celebration-icon">🎉</div>
+                <h3>VOCÊ DISSE SIM!</h3>
+                <p>Obrigado por me dar essa segunda chance! Prometo que nossa nova fase será ainda melhor que a anterior! Te amo muito! 💖✨</p>
+                <div class="sparkle">✨</div>
+            </div>
+
+            <div class="credits">
+                <p>Desenvolvido com 💖 por alguém que te ama muito</p>
+                <p>Versão 2.0 - "Segunda Chance Edition"</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
