@@ -449,7 +449,7 @@ body {
 .reason-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
-  animation: bounce 2s infinite;
+  animation: bounce 10s infinite;
 }
 
 .reason-title {
