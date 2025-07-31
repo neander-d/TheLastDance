@@ -34,7 +34,7 @@ const memories = [
     date: "nossa primeira noite",
     location: "Só nós dois no mundo",
     description:
-      "CUma noite mágica, onde nossos corações se entrelaçaram em momentos de pura conexão",
+      "Uma noite mágica, onde nossos corações se entrelaçaram em momentos de pura conexão",
     emoji: "🌟",
     photo: "fotos/foto3.jpg", // ADICIONE O CAMINHO DA SUA FOTO AQUI
     color: "from-purple-400 to-indigo-400",
