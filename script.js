@@ -298,6 +298,7 @@ function setCurrentMemory(index) {
   updateMemoryThumbnails()
 }
 
+
 // Atualizar visualizador de memórias
 function updateMemoryViewer() {
   const viewer = document.getElementById("memoryViewer")
@@ -306,7 +307,10 @@ function updateMemoryViewer() {
   const memory = memories[gameState.currentMemory]
   viewer.innerHTML = `
         <div class="polaroid">
-            <div class="photo">${memory.emoji}</div>
+            <div class="photo">
+                <img src="${memory.photo}" alt="${memory.title}" class="memory-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                <div class="emoji-fallback" style="display: none;">${memory.emoji}</div>
+            </div>
             <div class="photo-caption">${memory.title}</div>
         </div>
         
@@ -349,37 +353,40 @@ function initializeLastDance() {
 }
 
 // Alternar música
-function toggleMusic() {
-  gameState.isPlaying = !gameState.isPlaying
+ function toggleMusic() {
+            const audio = document.getElementById('backgroundMusic')
+            gameState.isPlaying = !gameState.isPlaying
 
-  const playIcon = document.getElementById("playIcon")
-  const playerStatus = document.getElementById("playerStatus")
-  const discoBall = document.querySelector(".disco-ball")
-  const spotlights = document.querySelectorAll(".spotlight")
-  const danceFloor = document.getElementById("danceFloor")
+            const playIcon = document.getElementById("playIcon")
+            const playerStatus = document.getElementById("playerStatus")
+            const discoBall = document.querySelector(".disco-ball")
+            const spotlights = document.querySelectorAll(".spotlight")
+            const danceFloor = document.getElementById("danceFloor")
 
-  if (gameState.isPlaying) {
-    playIcon.textContent = "⏸️"
-    playerStatus.textContent = "Tocando nossa canção..."
-    discoBall.classList.add("spinning")
-    spotlights.forEach((spotlight) => spotlight.classList.add("active"))
-    danceFloor.classList.add("dancing")
+            if (gameState.isPlaying) {
+                audio.play().catch(e => console.log('Erro ao tocar música:', e))
+                playIcon.textContent = "⏸️"
+                playerStatus.textContent = "Tocando nossa canção..."
+                discoBall.classList.add("spinning")
+                spotlights.forEach((spotlight) => spotlight.classList.add("active"))
+                danceFloor.classList.add("dancing")
 
-    startLyricsRotation()
-    createDancingParticles()
-    activateFloorLights()
-  } else {
-    playIcon.textContent = "▶️"
-    playerStatus.textContent = "Clique para tocar"
-    discoBall.classList.remove("spinning")
-    spotlights.forEach((spotlight) => spotlight.classList.remove("active"))
-    danceFloor.classList.remove("dancing")
+                startLyricsRotation()
+                createDancingParticles()
+                activateFloorLights()
+            } else {
+                audio.pause()
+                playIcon.textContent = "▶️"
+                playerStatus.textContent = "Clique para tocar"
+                discoBall.classList.remove("spinning")
+                spotlights.forEach((spotlight) => spotlight.classList.remove("active"))
+                danceFloor.classList.remove("dancing")
 
-    stopLyricsRotation()
-    clearDancingParticles()
-    deactivateFloorLights()
-  }
-}
+                stopLyricsRotation()
+                clearDancingParticles()
+                deactivateFloorLights()
+            }
+        }
 
 // Iniciar rotação das letras
 function startLyricsRotation() {

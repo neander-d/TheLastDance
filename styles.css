@@ -1,3 +1,4 @@
+/* Reset e Base */
 * {
   margin: 0;
   padding: 0;
@@ -449,7 +450,7 @@ body {
 .reason-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
-  animation: bounce 10s infinite;
+  animation: bounce 2s infinite;
 }
 
 .reason-title {
@@ -588,6 +589,25 @@ body {
   transform: rotate(0deg);
 }
 
+.memory-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.emoji-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  background: #e5e7eb;
+  border-radius: 4px;
+}
+
 .photo {
   background: #e5e7eb;
   height: 150px;
@@ -595,8 +615,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 4rem;
   margin-bottom: 0.5rem;
+  overflow: hidden;
+  position: relative;
 }
 
 .photo-caption {
@@ -1385,6 +1407,10 @@ body {
     font-size: 3.5rem;
   }
 
+  .emoji-fallback {
+    font-size: 3.5rem;
+  }
+
   .dance-floor {
     width: 280px;
     height: 280px;
@@ -1482,6 +1508,10 @@ body {
 
   .photo {
     height: 200px;
+    font-size: 4rem;
+  }
+
+  .emoji-fallback {
     font-size: 4rem;
   }
 
